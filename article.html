@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{template "head" .}}
+        <meta name="description" content="{{.Title}}">
+        <title>{{.Title}}</title>
+    </head>
+    <body>
+    <div class="viewMain">
+    <div class="wrap">
+        <div class="head container">
+            <a class="logo" id="logo" href="{{.Site.Root}}/" alt="mizodo"><i class="iconfont icon-logo"></i></a>
+        </div>
+        <div class="helper">
+            <div class="indicator">
+                <span class="top" id="totop"></span>
+                <span class="indicate"><em id="progress-bar"></em></span>
+                <span class="bottom" id="tobottom"></span>
+            </div>
+        </div>
+        <div class="article container">
+            <div class="mtitle">
+                <div class="bdash"></div>
+                <h2>{{.Title}}</h2>
+            </div>
+            {{range .Tags}}<span class="detail">{{.}}</span>{{end}}
+            <div class="post">{{.Content}}</div>
+            <div class="post-near cf" id="pagenavi">
+                    {{if .Prev}}
+                    <div class="prev">
+                        <a href="{{.Site.Root}}/{{.Prev.Link}}"><h3>PREV</h3><span>{{.Prev.Title}}</span></a>
+                    </div>
+                    {{end}}
+                    {{if .Next}}
+                    <div class="next">
+                    <a href="{{.Site.Root}}/{{.Next.Link}}"><h3>NEXT</h3><span>{{.Next.Title}}</span></a>
+                    </div>
+                    {{end}}
+            </div>
+        </div>
+        {{template "about" .}}
+        </div>
+    </div>
+        {{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{template "head" .}}
+        <meta name="keywords" content="{{.Site.Title}}, {{.Site.Subtitle}}">
+        <meta name="description" content="{{.Site.Subtitle}}">
+        <meta name="author" content="{{.Author.Name}}">
+        <title>{{.Site.Title}}</title>
+    </head>
+    <body>
+<div class="wrapper">
+    {{template "header" .}}
+    <div class="container">
+        <div class="main archive">
+            <header class="header">
+                <h1 class="title">{{i18n "archive"}}</h1>
+                <span class="subtitle">{{.Total}} {{i18n "articles"}}</span>
+            </header>
+            <ul class="archive-list cf">
+                {{range .Archive}}
+                <li class="archive-item">
+                    <div class="archive-year"><span>{{.Year}}</span></div>
+                    <ul class="article-list">
+                        {{range .Articles}}
+                        <li class="article-item">
+                                <span class="date">{{.Date}}</span>
+                                <a class="d-link" href="{{.Link}}">{{.Title}}</a>
+                        </li>
+                        {{end}}
+                    </ul>
+                </li>
+                {{end}}
+            </ul>
+            
+        </div>
+    </div>
+</div>
+        {{template "footer" .}}
+</body>
+</html>
