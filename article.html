@@ -26,16 +26,17 @@
             {{range .Tags}}<span class="detail">{{.}}</span>{{end}}
             <div class="post">{{.Content}}</div>
             <div class="post-near cf" id="pagenavi">
-                    {{if .Prev}}
-                    <div class="prev">
-                        <a href="{{.Site.Root}}/{{.Prev.Link}}"><h3>PREV</h3><span>{{.Prev.Title}}</span></a>
-                    </div>
-                    {{end}}
                     {{if .Next}}
                     <div class="next">
-                    <a href="{{.Site.Root}}/{{.Next.Link}}"><h3>NEXT</h3><span>{{.Next.Title}}</span></a>
+                    <a class="nee" href="{{.Site.Root}}/{{.Next.Link}}"><em>&lt;</em><span>NEXT</span>{{.Next.Title}}</a>
                     </div>
                     {{end}}
+                    {{if .Prev}}
+                    <div class="prev">
+                        <a class="nee" href="{{.Site.Root}}/{{.Prev.Link}}"><em>&gt;</em><span>PREV</span>{{.Prev.Title}}</a>
+                    </div>
+                    {{end}}
+
             </div>
         </div>
         {{template "about" .}}
