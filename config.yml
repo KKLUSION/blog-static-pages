@@ -2,7 +2,6 @@
 copy:
     - dist/css
     - dist/js
-    - img
     - favicon.png
     - robots.txt
 # I18n Support
