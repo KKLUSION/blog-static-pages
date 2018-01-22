@@ -8,24 +8,34 @@
     <body>
     <div class="viewMain">
     <div class="wrap">
-        <div class="head container">
-            <a class="logo" id="logo" href="{{.Site.Root}}/" alt="mizodo"><i class="iconfont icon-logo"></i></a>
+        <div class="athead container">
+            <a class="logo" href="{{.Site.Root}}/" alt="spentcc">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="42px">
+                <defs>
+                  <linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="100%" y2="0%">
+                      <stop offset="0%" stop-color="rgb(19,181,72)" stop-opacity="1" />
+                      <stop offset="100%" stop-color="rgb(47,212,101)" stop-opacity="1" />
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd"  fill="rgb(243, 243, 243)"
+                 d="M15.000,42.000 C6.716,42.000 -0.000,35.284 -0.000,27.000 C-0.000,16.155 14.000,-0.000 15.000,-0.000 C16.000,-0.000 30.000,15.655 30.000,27.000 C30.000,35.284 23.284,42.000 15.000,42.000 ZM20.959,24.333 C20.311,23.000 15.810,23.583 15.000,23.000 C14.190,22.417 16.377,16.417 15.000,16.000 C13.623,15.583 8.514,26.083 9.000,27.000 C9.486,27.917 14.028,27.250 15.000,28.000 C15.972,28.750 13.866,34.667 15.000,35.000 C16.134,35.333 21.607,25.667 20.959,24.333 Z"/>
+                <path fill="url(#PSgrad_0)"
+                 d="M15.000,42.000 C6.716,42.000 -0.000,35.284 -0.000,27.000 C-0.000,16.155 14.000,-0.000 15.000,-0.000 C16.000,-0.000 30.000,15.655 30.000,27.000 C30.000,35.284 23.284,42.000 15.000,42.000 ZM20.959,24.333 C20.311,23.000 15.810,23.583 15.000,23.000 C14.190,22.417 16.377,16.417 15.000,16.000 C13.623,15.583 8.514,26.083 9.000,27.000 C9.486,27.917 14.028,27.250 15.000,28.000 C15.972,28.750 13.866,34.667 15.000,35.000 C16.134,35.333 21.607,25.667 20.959,24.333 Z"/>
+              </svg>
+            </a>
         </div>
-        <div class="helper">
-            <div class="indicator">
-                <span class="top" id="totop"></span>
-                <span class="indicate"><em id="progress-bar"></em></span>
-                <span class="bottom" id="tobottom"></span>
+        <progress value="0" id="progressBar">
+          <div class="progress-container">
+            <span class="progress-bar"></span>
+          </div>
+        </progress>
+        <div class="article">
+            <div class="container">
+                <h1 class="mtitle">{{.Title}}</h1>
+                {{range .Tags}}<span class="detail">{{.}}</span>{{end}}
             </div>
-        </div>
-        <div class="article container">
-            <div class="mtitle">
-                <div class="bdash"></div>
-                <h2>{{.Title}}</h2>
-            </div>
-            {{range .Tags}}<span class="detail">{{.}}</span>{{end}}
             <div class="post">{{.Content}}</div>
-            <div class="post-near cf" id="pagenavi">
+            <div class="post-near container cf" id="pagenavi">
                     {{if .Next}}
                     <div class="next">
                     <a class="nee" href="{{.Site.Root}}/{{.Next.Link}}"><em>&lt;</em><span>NEXT</span>{{.Next.Title}}</a>
