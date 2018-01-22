@@ -1,7 +1,5 @@
 node_modules
 less
-css
-js
 gulpfile.js
 package.json
 npm-debug.log
